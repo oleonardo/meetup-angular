@@ -1,0 +1,35 @@
+@import './../variables.scss';
+
+md-sidenav-container {
+    width: 100vw;
+    height: 100vh;
+    background: url('/assets/background.jpg') repeat;
+    
+    md-sidenav { 
+        width: 200px;
+
+        ul { 
+            li { 
+                padding-left: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                cursor: pointer;
+                
+                &:hover { 
+                    color: #fff;
+                    background: color('primary');
+                }
+            }
+        }
+    }
+}   
+  
+header { 
+    height: 100px;
+
+    h1 { 
+        font-size: 32px;
+        color: color('primary');
+        margin-right: 20px;
+    }
+}
