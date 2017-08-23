@@ -3,6 +3,7 @@
     <nav fxLayout="column" fxLayoutAlign="start stretch">
       <ul>
         <li routerLink="/module" routerLinkActive="active" (click)="sidenav.toggle()">Modules</li>
+        <li routerLink="/template" routerLinkActive="active" (click)="sidenav.toggle()">Template</li>
         <li routerLink="/component" routerLinkActive="active" (click)="sidenav.toggle()">Components</li>
       </ul>
     </nav>
@@ -11,14 +12,14 @@
   <header fxLayout="column" fxLayoutAlign="center stretch">
     <div fxLayout="row" fxLayoutAlign="center center">
       <h1>{{ 'Angular examples' | uppercase }}</h1>
-      <button md-mini-fab (click)="sidenav.toggle()">
+      <button md-mini-fab color="primary" (click)="sidenav.toggle()">
       <i class="material-icons">menu</i>
     </button>
     </div>
   </header>
   <main fxLayout="row" fxLayoutAlign="start start">
     <div fxFlex="10"></div>
-    <div fxFlex="80">
+    <div fxFlex="80" fxLayout="column" fxLayoutAlign="start stretch">
       <router-outlet></router-outlet>
     </div>
     <div fxFlex="10"></div>

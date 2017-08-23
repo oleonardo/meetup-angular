@@ -1,5 +1,8 @@
 import { NgModule }           from '@angular/core';
 
+/* Core Modules */
+import { SharedModule } from '../shared/shared.module';
+
 /* Feature Modules */
 import { ModuleRoutingModule } from './module-routing.module';
 
@@ -7,7 +10,7 @@ import { ModuleRoutingModule } from './module-routing.module';
 import { ModuleComponent } from './module.component';
 
 @NgModule({
-  imports:      [ ModuleRoutingModule ],
+  imports:      [ SharedModule, ModuleRoutingModule ],
   declarations: [ ModuleComponent ],
   providers:    [ ]
 })

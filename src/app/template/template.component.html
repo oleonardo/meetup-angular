@@ -1,0 +1,96 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <h2>Template Syntax</h2>
+</div>
+<div fxLayout="column" fxLayoutAlign="start stretch">
+  <div class="header" fxLayout="row" fxLayoutAlign="start start">
+    <div fxFlex="33" fxLayoutAlign="center center">Conceito</div>
+    <div fxFlex="33" fxLayoutAlign="center center">Syntax</div>
+    <div fxFlex="34" fxLayoutAlign="center center">Example</div>
+  </div>
+  <div class="body" fxLayout="column" fxLayoutAlign="start stretch">
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">Interpolation</div>
+      <div fxFlex="33" fxLayoutAlign="center center">{{interpolationSyntax}}</div>
+      <div fxFlex="34" fxLayoutAlign="end center">{{interpolationData}}</div>
+    </div>
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">Input variable</div>
+      <div fxFlex="33" fxLayoutAlign="center center">let variableName</div>
+      <div fxFlex="34" fxLayout="row" fxLayoutAlign="end center"><span *ngFor="let character of TWD; let i=index">{{ i > 0 ? ', ': '' }}{{character}}</span></div>
+    </div>
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">Reference variable</div>
+      <div fxFlex="33" fxLayoutAlign="center center">#var</div>
+      <div fxFlex="34" fxLayout="row" fxLayoutAlign="end center">
+        <md-input-container>
+          <input mdInput placeholder="Reference variable example" #refExample>
+        </md-input-container>
+        <span>&nbsp;-&nbsp;</span>{{refExample.value ? refExample.value : 'Empty' }}
+      </div>
+    </div>
+    <div class="body-separator" fxLayout="column" fxLayoutAlign="center center">
+      <span>Data Binding</span>
+    </div>
+    <div class="body-header" fxLayout="row" fxLayoutAlign="start start">
+      <div fxFlex="33" fxLayoutAlign="center center">Data direction</div>
+      <div fxFlex="33" fxLayoutAlign="center center">Syntax</div>
+      <div fxFlex="34" fxLayoutAlign="center center">Type</div>
+    </div>
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">One-way <br />from data source <br/>to view target</div>
+      <div fxFlex="33" fxLayoutAlign="center center">
+        {{interpolationExpression}} <br/> [target]="expression" <br/> bind-target="expression"
+      </div>
+      <div fxFlex="34" fxLayout="row" fxLayoutAlign="end center" style="text-align: right;">
+        Interpolation <br/> Property <br/> Attribute <br/> Class <br/> Style &nbsp;
+      </div>
+    </div>
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">One-way <br />from view target <br/>to data source</div>
+      <div fxFlex="33" fxLayoutAlign="center center">
+        (target)="statement" <br /> on-target="statement"
+      </div>
+      <div fxFlex="34" fxLayout="row" fxLayoutAlign="end center">
+        Event
+      </div>
+    </div>
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">Two-way</div>
+      <div fxFlex="33" fxLayoutAlign="center center">
+        [(target)]="expression" <br /> bindon-target="expression"
+      </div>
+      <div fxFlex="34" fxLayout="row" fxLayoutAlign="end center">
+        Two-way
+      </div>
+    </div>
+    <div class="body-separator" fxLayout="column" fxLayoutAlign="center center">
+      <span>Binding targets</span>
+    </div>
+    <div class="body-header" fxLayout="row" fxLayoutAlign="start start">
+      <div fxFlex="33" fxLayoutAlign="center center">Type</div>
+      <div fxFlex="33" fxLayoutAlign="center center">Target</div>
+      <div fxFlex="34" fxLayoutAlign="center center">Example</div>
+    </div>
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">Property</div>
+      <div fxFlex="33" fxLayout="column" fxLayoutAlign="center center">
+        <label>Element property</label>
+        <label>Component property</label>
+        <label>Directive property</label> 
+      </div>
+      <div fxFlex="34" fxLayout="column" fxLayoutAlign="center end">
+        <label [innerText]="innerHtml"></label>
+        <app-template-binding [text]="componentPropertyText"></app-template-binding>
+        <label [ngClass]="{'highlight': isHighlight}">ngClass</label>
+      </div>
+    </div>
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">Event</div>
+      <div fxFlex="33" fxLayoutAlign="center center">(event)="statement"</div>
+      <div fxFlex="34" fxLayout="row" fxLayoutAlign="end center">
+        <button md-raised-button color="primary" (click)="isHighlight = !isHighlight">on-click</button>&nbsp;
+        <button md-raised-button color="primary" on-click="isHighlight = !isHighlight">(click)</button>
+      </div>
+    </div>
+  </div>
+</div>

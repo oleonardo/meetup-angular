@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-/* App Root */
-import { AppComponent } from './app.component';
-
 /* External Modules */
 import 'hammerjs';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule, MdSidenavModule, MdButtonModule } from '@angular/material';
+import { MdButtonModule, MdSidenavModule } from '@angular/material';
+
+/* App Root */
+import { AppComponent } from './app.component';
 
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
@@ -22,13 +22,12 @@ import { ModuleModule } from './module/module.module';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,    
     FlexLayoutModule,
-    MaterialModule,
-    MdSidenavModule,
     MdButtonModule,
+    MdSidenavModule,
     ModuleModule,
-    AppRoutingModule
+    AppRoutingModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

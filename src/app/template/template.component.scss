@@ -1,0 +1,42 @@
+@import './../../variables.scss';
+
+.header { 
+    background: color('angular-blue');
+    color: color('white');
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 1px solid color('angular-border');
+}
+
+.body { 
+    border-left: 1px solid color('angular-border');
+    border-right: 1px solid color('angular-border');
+    border-bottom: 1px solid color('angular-border');
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-bottom: 20px;
+
+    .body-separator { 
+        padding: 2px 0;
+        background: rgba(0,0,0,.50);
+        color: color('white');
+    }
+
+    .body-header { 
+        background: color('angular-blue');
+        color: color('white');
+    }
+
+    .body-row { 
+        padding: 5px 10px;
+        border-top: 1px solid color('angular-border');
+        
+        &:first-child { 
+            border-top: none;
+        }
+    }
+
+    .highlight { 
+        background: yellow;
+    }
+}
