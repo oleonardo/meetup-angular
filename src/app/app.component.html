@@ -2,8 +2,8 @@
   <md-sidenav #sidenav mode="over" opened="false">
     <nav fxLayout="column" fxLayoutAlign="start stretch">
       <ul>
-        <li (click)="navigateTo('/module')">Modules</li>
-        <li (click)="navigateTo('/component')">Components</li>
+        <li routerLink="/module" routerLinkActive="active" (click)="sidenav.toggle()">Modules</li>
+        <li routerLink="/component" routerLinkActive="active" (click)="sidenav.toggle()">Components</li>
       </ul>
     </nav>
   </md-sidenav>
@@ -16,7 +16,11 @@
     </button>
     </div>
   </header>
-  <main>
-    <router-outlet></router-outlet>
+  <main fxLayout="row" fxLayoutAlign="start start">
+    <div fxFlex="10"></div>
+    <div fxFlex="80">
+      <router-outlet></router-outlet>
+    </div>
+    <div fxFlex="10"></div>
   </main>
 </md-sidenav-container>

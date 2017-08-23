@@ -15,7 +15,7 @@ md-sidenav-container {
                 padding-bottom: 5px;
                 cursor: pointer;
                 
-                &:hover { 
+                &:hover, &.active { 
                     color: #fff;
                     background: color('primary');
                 }

@@ -7,14 +7,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @ViewChild('sidenav') sidenav: any;
-
   constructor(
     private router: Router
   ) {}
-
-  navigateTo(destination) { 
-    this.router.navigate([destination]);
-    this.sidenav.toggle();
-  }
 }
