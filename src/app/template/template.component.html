@@ -1,23 +1,29 @@
 <div fxLayout="column" fxLayoutAlign="center center">
   <h2>Template Syntax</h2>
 </div>
+
 <div fxLayout="column" fxLayoutAlign="start stretch">
+
   <div class="header" fxLayout="row" fxLayoutAlign="start start">
     <div fxFlex="33" fxLayoutAlign="center center">Conceito</div>
     <div fxFlex="33" fxLayoutAlign="center center">Syntax</div>
     <div fxFlex="34" fxLayoutAlign="center center">Example</div>
   </div>
+
   <div class="body" fxLayout="column" fxLayoutAlign="start stretch">
+
     <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
       <div fxFlex="33" fxLayoutAlign="start center">Interpolation</div>
       <div fxFlex="33" fxLayoutAlign="center center">{{interpolationSyntax}}</div>
       <div fxFlex="34" fxLayoutAlign="end center">{{interpolationData}}</div>
     </div>
+
     <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
       <div fxFlex="33" fxLayoutAlign="start center">Input variable</div>
       <div fxFlex="33" fxLayoutAlign="center center">let variableName</div>
       <div fxFlex="34" fxLayout="row" fxLayoutAlign="end center"><span *ngFor="let character of TWD; let i=index">{{ i > 0 ? ', ': '' }}{{character}}</span></div>
     </div>
+
     <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
       <div fxFlex="33" fxLayoutAlign="start center">Reference variable</div>
       <div fxFlex="33" fxLayoutAlign="center center">#var</div>
@@ -28,6 +34,8 @@
         <span>&nbsp;-&nbsp;</span>{{refExample.value ? refExample.value : 'Empty' }}
       </div>
     </div>
+
+
     <div class="body-separator" fxLayout="column" fxLayoutAlign="center center">
       <span>Data Binding</span>
     </div>
@@ -36,6 +44,7 @@
       <div fxFlex="33" fxLayoutAlign="center center">Syntax</div>
       <div fxFlex="34" fxLayoutAlign="center center">Type</div>
     </div>
+
     <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
       <div fxFlex="33" fxLayoutAlign="start center">One-way <br />from data source <br/>to view target</div>
       <div fxFlex="33" fxLayoutAlign="center center">
@@ -45,6 +54,7 @@
         Interpolation <br/> Property <br/> Attribute <br/> Class <br/> Style &nbsp;
       </div>
     </div>
+
     <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
       <div fxFlex="33" fxLayoutAlign="start center">One-way <br />from view target <br/>to data source</div>
       <div fxFlex="33" fxLayoutAlign="center center">
@@ -54,6 +64,7 @@
         Event
       </div>
     </div>
+
     <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
       <div fxFlex="33" fxLayoutAlign="start center">Two-way</div>
       <div fxFlex="33" fxLayoutAlign="center center">
@@ -63,6 +74,8 @@
         Two-way
       </div>
     </div>
+
+
     <div class="body-separator" fxLayout="column" fxLayoutAlign="center center">
       <span>Binding targets</span>
     </div>
@@ -71,12 +84,13 @@
       <div fxFlex="33" fxLayoutAlign="center center">Target</div>
       <div fxFlex="34" fxLayoutAlign="center center">Example</div>
     </div>
+
     <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
       <div fxFlex="33" fxLayoutAlign="start center">Property</div>
       <div fxFlex="33" fxLayout="column" fxLayoutAlign="center center">
         <label>Element property</label>
         <label>Component property</label>
-        <label>Directive property</label> 
+        <label>Directive property</label>
       </div>
       <div fxFlex="34" fxLayout="column" fxLayoutAlign="center end">
         <label [innerText]="innerHtml"></label>
@@ -84,13 +98,139 @@
         <label [ngClass]="{'highlight': isHighlight}">ngClass</label>
       </div>
     </div>
+
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">Attribute</div>
+      <div fxFlex="33" fxLayout="column" fxLayoutAlign="center center">
+        <label>Element attribute</label>
+      </div>
+      <div fxFlex="34" fxLayout="column" fxLayoutAlign="center end">
+        <label [attr.for]="'two-way'">Label attribute for</label>
+      </div>
+    </div>
+
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">Class</div>
+      <div fxFlex="33" fxLayout="column" fxLayoutAlign="center center">
+        <label>Class property</label>
+      </div>
+      <div fxFlex="34" fxLayout="column" fxLayoutAlign="center end">
+        <label [class.highlight]="isHighlight">Label class property</label>
+      </div>
+    </div>
+
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">Style</div>
+      <div fxFlex="33" fxLayout="column" fxLayoutAlign="center center">
+        <label>Style property</label>
+      </div>
+      <div fxFlex="34" fxLayout="column" fxLayoutAlign="center end">
+        <button md-raised-button [style.color]="isHighlight ? 'yellow' : 'black'" (click)="isHighlight = !isHighlight">Style color property</button>
+      </div>
+    </div>
+
     <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
       <div fxFlex="33" fxLayoutAlign="start center">Event</div>
-      <div fxFlex="33" fxLayoutAlign="center center">(event)="statement"</div>
+      <div fxFlex="33" fxLayoutAlign="center center">Element event</div>
       <div fxFlex="34" fxLayout="row" fxLayoutAlign="end center">
         <button md-raised-button color="primary" (click)="isHighlight = !isHighlight">on-click</button>&nbsp;
         <button md-raised-button color="primary" on-click="isHighlight = !isHighlight">(click)</button>
       </div>
     </div>
+
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">[(...)]</div>
+      <div fxFlex="33" fxLayout="column" fxLayoutAlign="center center">
+        <label>Data property</label>
+        <label>Form elements with [(ngModel)]</label>
+      </div>
+      <div fxFlex="34" fxLayout="column" fxLayoutAlign="center end">
+        <md-input-container>
+          <input mdInput type="text" placeholder="Two-way binding example" [(ngModel)]="name" id="two-way">
+        </md-input-container>
+        {{ name }}
+      </div>
+    </div>
+
+
+    <div class="body-separator" fxLayout="column" fxLayoutAlign="center center">
+      <span>Built-in structural directives</span>
+    </div>
+
+    <div class="body-row" fxLayout="column" fxLayoutAlign="start center">
+      <p>
+        As diretrizes estruturais são responsáveis ​​pelo layout HTML. Eles moldam ou remodelam a estrutura do DOM, geralmente adicionando,
+        removendo ou manipulando elementos.
+      </p>
+    </div>
+
+    <div class="body-header" fxLayout="row" fxLayoutAlign="start start">
+      <div fxFlex="33" fxLayoutAlign="center center">Type</div>
+      <div fxFlex="67" fxLayoutAlign="center center">Example</div>
+    </div>
+
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">
+        <h3>*ngIf</h3>
+      </div>
+      <div fxFlex="67" fxLayout="column" fxLayoutAlign="center center">
+        <div *ngIf="isHighlight; else highlightOff">Highlight property <span [style.color]="'green'">on</span></div>
+        <ng-template #highlightOff>
+          <diV>Highlight property <span [style.color]="'red'">off</span></diV>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">
+        <h3>*ngFor</h3>
+      </div>
+      <div fxFlex="67" fxLayout="column" fxLayoutAlign="center center">
+        <span *ngFor="let character of TWD">{{character}}</span>
+      </div>
+    </div>
+
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">
+        <h3>*ngSwitch</h3>
+      </div>
+      <div [ngSwitch]="name | lowercase" fxFlex="67" fxLayoutAlign="center center">
+        <ng-template [ngSwitchCase]="'negan'">
+          <img src="https://observatoriodocinema.bol.uol.com.br/wp-content/uploads/2016/08/neganvitima.jpg" />
+        </ng-template>
+        <ng-template ngSwitchDefault>
+          <img src="https://upload.wikimedia.org/wikipedia/en/1/16/TWD_Season_7_main_cast.jpg" />
+        </ng-template>
+      </div>
+    </div>
+
+
+    <div class="body-separator" fxLayout="column" fxLayoutAlign="center center">
+      <span>Template expression operators</span>
+    </div>
+
+    <div class="body-header" fxLayout="row" fxLayoutAlign="start start">
+      <div fxFlex="33" fxLayoutAlign="center center">Type</div>
+      <div fxFlex="67" fxLayoutAlign="center center">Example</div>
+    </div>
+
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">
+        <h3>Pipe operator</h3>
+      </div>
+      <div fxFlex="67" fxLayout="column" fxLayoutAlign="center center">
+        <span *ngFor="let character of TWD">{{character | uppercase }}</span>
+      </div>
+    </div>
+
+    <div class="body-row" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="33" fxLayoutAlign="start center">
+        <h3>Safe navigation operator</h3>
+      </div>
+      <div fxFlex="67" fxLayout="column" fxLayoutAlign="center center">
+        Use ? to prevent errors {{x?.anything}}
+      </div>
+    </div>
   </div>
+  
 </div>

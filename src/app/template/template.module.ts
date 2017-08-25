@@ -1,4 +1,5 @@
-import { NgModule }           from '@angular/core';
+import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 
 /* Core Modules */
 import { SharedModule } from '../shared/shared.module';
@@ -11,8 +12,8 @@ import { TemplateComponent } from './template.component';
 import { TemplateBindingComponent } from './template-binding.component';
 
 @NgModule({
-  imports:      [ SharedModule, TemplateRoutingModule ],
-  declarations: [ TemplateComponent, TemplateBindingComponent ],
-  providers:    [ ]
+  imports: [SharedModule, TemplateRoutingModule, FormsModule],
+  declarations: [TemplateComponent, TemplateBindingComponent],
+  providers: []
 })
 export class TemplateModule { }

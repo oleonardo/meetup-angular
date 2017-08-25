@@ -14,7 +14,8 @@ export class TemplateComponent implements OnInit {
   isHighlight: boolean = true;
   innerHtml: string = 'Element property inner html';
   componentPropertyText: string = 'Component property text';
-  
+  name: string = 'Negan';
+
   constructor() { }
 
   ngOnInit() {

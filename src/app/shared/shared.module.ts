@@ -18,7 +18,8 @@ import { MaterialModule, MdButtonModule, MdInputModule } from '@angular/material
         CommonModule,
         FlexLayoutModule,
         MaterialModule,
-        MdButtonModule
+        MdButtonModule,
+        MdInputModule
     ]
 })
 export class SharedModule { }
