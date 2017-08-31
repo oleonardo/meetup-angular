@@ -1,0 +1,46 @@
+@import './../../variables.scss';
+
+h3 { 
+    color: color('angular-blue');
+    font-size: 18px;
+}
+
+.iteration  {
+    font-weight: 700;  
+    margin-left: 10px;
+}
+
+.lifecycle { 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.characters { 
+
+    .character { 
+        padding: 10px;
+        margin-bottom: 20px;
+        background: color('white');
+        box-shadow: 0 2px 2px rgba(10,16,20,.24), 0 0 2px rgba(10,16,20,.12);
+        transition: box-shadow .5s;
+
+        h1 { 
+            max-width: 200px;
+        }
+
+        img { 
+            width: 200px;
+            height: 200px;
+            border-radius: 3px;
+            border: 4px solid #fff;
+        }
+
+        &:hover { 
+            box-shadow: 0 8px 8px rgba(10,16,20,.24), 0 0 8px rgba(10,16,20,.12);
+
+            h1 { 
+                color: color('angular-blue');
+            }
+        }
+    }
+}

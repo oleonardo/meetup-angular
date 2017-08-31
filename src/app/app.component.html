@@ -2,16 +2,17 @@
   <md-sidenav #sidenav mode="over" opened="false">
     <nav fxLayout="column" fxLayoutAlign="start stretch">
       <ul>
-        <li routerLink="/module" routerLinkActive="active" (click)="sidenav.toggle()">Modules</li>
+        <li routerLink="/module" routerLinkActive="active" (click)="sidenav.toggle()">Module</li>
         <li routerLink="/template" routerLinkActive="active" (click)="sidenav.toggle()">Template</li>
-        <li routerLink="/component" routerLinkActive="active" (click)="sidenav.toggle()">Components</li>
+        <li routerLink="/component" routerLinkActive="active" (click)="sidenav.toggle()">Component</li>
+        <li routerLink="/directive" routerLinkActive="active" (click)="sidenav.toggle()">Directive</li>        
       </ul>
     </nav>
   </md-sidenav>
 
   <header fxLayout="column" fxLayoutAlign="center stretch">
     <div fxLayout="row" fxLayoutAlign="center center">
-      <h1>{{ 'Angular examples' | uppercase }}</h1>
+      <h1>{{ 'Angular' | uppercase }}</h1>
       <button md-mini-fab color="primary" (click)="sidenav.toggle()">
       <i class="material-icons">menu</i>
     </button>

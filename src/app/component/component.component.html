@@ -1,3 +1,50 @@
-<p>
-  component works!
-</p>
+<div fxLayout="column" fxLayoutAlign="center center">
+  <h2>Component</h2>
+</div>
+
+<div class="lifecycle" fxLayout="column" fxLayoutAlign="start stretch">
+  <h3>Lifecycle:</h3>
+  <md-input-container>
+    <input mdInput placeholder="OnChanges Example" [(ngModel)]="data">
+  </md-input-container>
+  <app-chid-component [data]="data"></app-chid-component>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <label>ngOnInit:</label>
+    <label class="iteration">{{onInitIterations}}</label>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <label>ngDoCheck:</label>
+    <label class="iteration">{{onDoCheckIterations}}</label>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <label>ngAfterContentInit:</label>
+    <label class="iteration">{{onAfterContentInitIterations}}</label>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <label>ngAfterContentChecked:</label>
+    <label class="iteration">{{onAfterContentCheckedIterations}}</label>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <label>ngAfterViewInit:</label>
+    <label class="iteration">log</label>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <label>ngAfterViewChecked:</label>
+    <label class="iteration">log</label>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <label>ngOnDestroy:</label>
+    <label class="iteration">log</label>
+  </div>
+</div>
+
+<h2>API Example</h2>
+
+<div class="characters" fxLayout="row" fxLayoutAlign="start start" *ngIf="marvelCharacters" fxLayoutWrap>
+  <div *ngFor="let hero of marvelCharacters" fxLayout="row" fxLayoutAlign="center center" fxFlex="33">
+    <div class="character" fxLayout="column" fxLayoutAlign="center center">
+      <img [src]="hero.thumbnail.path + '.' + hero.thumbnail.extension" [alt]="hero.name">
+      <h1>{{ hero.name }}</h1>
+    </div>
+  </div>
+</div>

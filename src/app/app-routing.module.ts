@@ -5,7 +5,8 @@ export const routes: Routes = [
     { path: '', redirectTo: 'module', pathMatch: 'full'},
     { path: 'module', loadChildren: 'app/module/module.module#ModuleModule' },
     { path: 'template', loadChildren: 'app/template/template.module#TemplateModule' },
-    { path: 'component', loadChildren: 'app/component/component.module#ComponentModule' }
+    { path: 'component', loadChildren: 'app/component/component.module#ComponentModule' },
+    { path: 'directive', loadChildren: 'app/directive/directive.module#DirectiveModule' }    
   ];
   
   @NgModule({

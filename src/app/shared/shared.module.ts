@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule, MdButtonModule, MdInputModule } from '@angular/material';
 
+/* Directives */
+import { HighlightDirective } from './directives/highlight.directive';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -13,13 +16,16 @@ import { MaterialModule, MdButtonModule, MdInputModule } from '@angular/material
         MdButtonModule,
         MdInputModule
     ],
-    declarations: [],
+    declarations: [
+        HighlightDirective
+    ],
     exports: [
         CommonModule,
         FlexLayoutModule,
         MaterialModule,
         MdButtonModule,
-        MdInputModule
+        MdInputModule,
+        HighlightDirective        
     ]
 })
 export class SharedModule { }
