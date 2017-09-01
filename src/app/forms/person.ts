@@ -7,4 +7,4 @@ export class Person {
         this.name = '';
         this.email = '';
     }
-}
+}   

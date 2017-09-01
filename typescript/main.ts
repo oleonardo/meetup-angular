@@ -1,9 +1,3 @@
-/* Javascript */
-var title = 'Um título qualquer';
-var array = ['Rick Grimes', 'Daryl Dixon', 'Carl Grimes', 'Michonne', 'Negan'];
-
-
-
 /* ES 6 ou ES 2015 */
 let pageTitle = 'Um título qualquer';
 let arrayTWD: string[] = ['Rick Grimes', 'Daryl Dixon', 'Carl Grimes', 'Michonne', 'Negan'];
@@ -27,7 +21,7 @@ interface Person {
     lastName: string;
 }
 
-function println(data: Person) { 
+function println(data: Person) : void { 
     console.log(data.firstName);
 }
 
