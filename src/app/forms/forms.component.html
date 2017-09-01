@@ -1,0 +1,62 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <h2>Template-driven Forms</h2>
+</div>
+<form class="form-block" (ngSubmit)="f.form.valid && saveTemplate()" #f="ngForm" novalidate fxLayout="column" fxLayoutAlign="start stretch">
+  <div class="form-group" fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <md-form-field fxFlex="30">
+        <input mdInput type="text" maxlength="100" placeholder="Name" name="name" [(ngModel)]="data.name" #tname #name="ngModel"
+          required>
+        <md-error class="error" *ngIf="f.submitted && name.errors?.required">O nome é obrigatório.</md-error>
+        <md-hint align="end">{{tname.value.length}} / 100</md-hint>
+      </md-form-field>
+      <md-form-field fxFlex="30">
+        <input mdInput [mdDatepicker]="picker" placeholder="Birthday" name="birthday" [(ngModel)]="data.birthday" #tbirthday #birthday="ngModel"
+          required>
+        <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+        <md-datepicker touchUi="true" #picker></md-datepicker>
+        <md-error class="error" *ngIf="f.submitted && birthday.errors?.required">A data de nascimento é obrigatória.</md-error>
+      </md-form-field>
+      <md-form-field fxFlex="30">
+        <input mdInput type="email" maxlength="120" placeholder="Email" name="email" [(ngModel)]="data.email" #temail #email="ngModel"
+          required email>
+        <md-error class="error" *ngIf="f.submitted && email.errors?.required">O email é obrigatório.</md-error>
+        <md-error class="error" *ngIf="f.submitted && !email.errors?.required && email.errors?.email">Email inválido.</md-error>
+        <md-hint align="end">{{temail.value.length}} / 120</md-hint>
+      </md-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end end">
+      <button md-raised-button class="primary save" type="submit">Save</button>
+    </div>
+  </div>
+</form>
+
+<div fxLayout="column" fxLayoutAlign="center center">
+  <h2>Reactive Forms</h2>
+</div>
+<form class="form-block" (ngSubmit)="saveReactive()" [formGroup]="rForm" novalidate fxLayout="column" fxLayoutAlign="start stretch">
+  <div class="form-group" fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <md-form-field fxFlex="30">
+        <input mdInput type="text" maxlength="100" placeholder="Name" formControlName="name" #rrname>
+        <md-error class="error" *ngIf="checkIfRequired('name')">O nome é obrigatório.</md-error>
+        <md-hint align="end">{{rrname?.value?.length}} / 100</md-hint>
+      </md-form-field>
+      <md-form-field fxFlex="30">
+        <input mdInput [mdDatepicker]="rpicker" placeholder="Birthday" name="rBirthday" formControlName="birthday">
+        <md-datepicker-toggle mdSuffix [for]="rpicker"></md-datepicker-toggle>
+        <md-datepicker touchUi="true" #rpicker></md-datepicker>
+        <md-error class="error" *ngIf="checkIfRequired('birthday')">A data de nascimento é obrigatória.</md-error>
+      </md-form-field>
+      <md-form-field fxFlex="30">
+          <input mdInput type="text" maxlength="100" placeholder="Email" formControlName="email" #remail>
+          <md-error class="error" *ngIf="checkIfRequired('email')">O email é obrigatório.</md-error>
+          <md-error class="error" *ngIf="checkIfEmail('email')">Email inválido.</md-error>          
+          <md-hint align="end">{{remail?.value?.length}} / 100</md-hint>
+        </md-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end end">
+      <button md-raised-button class="primary save" type="submit">Save</button>
+    </div>
+  </div>
+</form>

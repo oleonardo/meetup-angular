@@ -6,7 +6,8 @@ export const routes: Routes = [
     { path: 'module', loadChildren: 'app/module/module.module#ModuleModule' },
     { path: 'template', loadChildren: 'app/template/template.module#TemplateModule' },
     { path: 'component', loadChildren: 'app/component/component.module#ComponentModule' },
-    { path: 'directive', loadChildren: 'app/directive/directive.module#DirectiveModule' }    
+    { path: 'directive', loadChildren: 'app/directive/directive.module#DirectiveModule' },
+    { path: 'forms', loadChildren: 'app/forms/forms.module#CustomFormsModule' }        
   ];
   
   @NgModule({

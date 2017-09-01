@@ -19,17 +19,21 @@ export class ComponentComponent implements OnInit, DoCheck, AfterContentInit, Af
 
   apiGetSubscription: Subscription;
   marvelCharacters: any;
+  loading: boolean = true;
 
   constructor(private http: Http) { }
 
   ngOnInit() {
     this.onInitIterations++;
 
-    this.apiGetSubscription = this.http.get('https://gateway.marvel.com:443/v1/public/characters?offset=550&limit=50&apikey=41751631ce8fe6ef78541f6ff118f662')
+    this.apiGetSubscription = this.http.get('https://gateway.marvel.com:443/v1/public/characters?offset=550&limit=100&apikey=41751631ce8fe6ef78541f6ff118f662')
       .map(res => res.json())
-      .subscribe(res => { 
+      .subscribe(
+      res => {
         this.marvelCharacters = res.data.results;
-      });
+        this.loading = false;
+      },
+      err => this.loading = false);
   }
 
   ngDoCheck() {

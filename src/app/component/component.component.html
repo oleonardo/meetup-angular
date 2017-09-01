@@ -38,7 +38,11 @@
   </div>
 </div>
 
-<h2>API Example</h2>
+<h2>Http module Example</h2>
+
+<div fxLayout="column" fxLayoutAlign="center center" *ngIf="loading">
+  <md-progress-spinner color="primary" mode="indeterminate"></md-progress-spinner>
+</div>
 
 <div class="characters" fxLayout="row" fxLayoutAlign="start start" *ngIf="marvelCharacters" fxLayoutWrap>
   <div *ngFor="let hero of marvelCharacters" fxLayout="row" fxLayoutAlign="center center" fxFlex="33">

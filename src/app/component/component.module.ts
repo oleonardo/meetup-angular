@@ -12,8 +12,17 @@ import { ComponentRoutingModule } from './component-routing.module';
 import { ComponentComponent } from './component.component';
 import { ChildComponentComponent } from './child-component.component';
 
+/* Third-party */
+import { MdProgressSpinnerModule } from "@angular/material";
+
 @NgModule({
-  imports: [SharedModule, ComponentRoutingModule, FormsModule, HttpModule],
+  imports: [
+    SharedModule, 
+    ComponentRoutingModule, 
+    FormsModule, 
+    HttpModule,
+    MdProgressSpinnerModule
+  ],
   declarations: [
     ComponentComponent,
     ChildComponentComponent

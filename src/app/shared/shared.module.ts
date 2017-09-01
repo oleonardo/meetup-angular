@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 /* External Modules */
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule, MdButtonModule, MdInputModule } from '@angular/material';
+import { MaterialModule, MdButtonModule, MdInputModule, MdNativeDateModule, MdDatepickerModule } from '@angular/material';
 
 /* Directives */
 import { HighlightDirective } from './directives/highlight.directive';
@@ -14,7 +14,9 @@ import { HighlightDirective } from './directives/highlight.directive';
         FlexLayoutModule,
         MaterialModule,
         MdButtonModule,
-        MdInputModule
+        MdInputModule,
+        MdNativeDateModule,
+        MdDatepickerModule
     ],
     declarations: [
         HighlightDirective
@@ -25,6 +27,7 @@ import { HighlightDirective } from './directives/highlight.directive';
         MaterialModule,
         MdButtonModule,
         MdInputModule,
+        MdDatepickerModule,
         HighlightDirective        
     ]
 })
