@@ -7,9 +7,9 @@ Este projeto contém exemplos de código em Angular baseados em uma Apresentaç�
 
 | Dependência | Link |
 | ------ | ------ |
-| Angular CLI | [https://cli.angular.io/] [PlDb] |
-| Node.js | [https://nodejs.org/en/] [PlGh] |
-| Typescript | [https://www.typescriptlang.org/] [PlDb] |
+| Angular CLI | https://cli.angular.io/ |
+| Node.js | https://nodejs.org/en/ |
+| Typescript | https://www.typescriptlang.org/ |
 
 ### Executando
 
@@ -18,6 +18,7 @@ Instalar as depêndencias:
 ```sh
 $ npm install 
 ```
+Teste local com o ng serve:
 
 ```sh
 $ ng serve --open
